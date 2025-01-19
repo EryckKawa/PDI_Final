@@ -55,7 +55,7 @@ object_gray = cv2.cvtColor(object_extracted, cv2.COLOR_BGR2GRAY)
 _, object_binary = cv2.threshold(object_gray, 1, 255, cv2.THRESH_BINARY)
 
 # Definir o kernel com formato elíptico e tamanho 7x7
-kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (20, 20))
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (30, 30))
 
 # Aplicar operação de fechamento na imagem binária com 2 iterações
 object_binary_closed = cv2.morphologyEx(object_binary, cv2.MORPH_CLOSE, kernel, iterations=2)
